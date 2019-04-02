@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+
+<addon scheme='2.0'>
+    <id>modulbankpayment</id>
+    <version>1.0.0</version>
+    <name>Модульбанк:Интернет эквайринг</name>
+    <description>Модульбанк эквайринг</description>
+    <priority>100500</priority>
+    <status>active</status>
+	<functions>
+        <item for="install">fn_modulbankpayment_install</item>
+        <item for="uninstall">fn_modulbankpayment_uninstall</item>
+	</functions>
+	<language_variables>
+        <item lang="ru" id="addons.modulbankpayment.payment_success">ОПЕРАЦИЯ ОДОБРЕНА</item>
+        <item lang="ru" id="addons.modulbankpayment.action_success">операция одобрена</item>
+        <item lang="ru" id="modulbankpayment_transaction_status_wait">Ожидаем поступления средств</item>
+        <item lang="ru" id="modulbankpayment_transaction_status_processing">В процессе</item>
+        <item lang="ru" id="modulbankpayment_transaction_status_3ds">Ожидает 3DS</item>
+        <item lang="ru" id="modulbankpayment_transaction_status_failed">При оплате возникла ошибка</item>
+        <item lang="ru" id="modulbankpayment_transaction_status_complete">Оплата прошла успешно</item>
+        <item lang="ru" id="modulbankpayment_transaction_status">Статсут оплаты</item>
+        <item lang="ru" id="modulbankpayment_merchant">Мерчант</item>
+        <item lang="ru" id="modulbankpayment_secret_key">Секретный ключ</item>
+        <item lang="ru" id="modulbankpayment_test_secret_key">Тестовый секретный ключ</item>
+        <item lang="ru" id="modulbankpayment_mode">Режим</item>
+        <item lang="ru" id="modulbankpayment_mode_test">Тестовый</item>
+        <item lang="ru" id="modulbankpayment_mode_prod">Рабочий</item>
+        <item lang="ru" id="modulbankpayment_success_url">Адрес для перехода после успешной оплаты</item>
+        <item lang="ru" id="modulbankpayment_fail_url">Адрес для перехода после ошибки при оплате</item>
+        <item lang="ru" id="modulbankpayment_cancel_url">Адрес для перехода в случае нажатия кнопки «Вернуться в магазин»</item>
+
+
+        <item lang="ru" id="modulbankpayment_sno">Система налогооблажения</item>
+        <item lang="ru" id="modulbankpayment_sno_osn">общая СН</item>
+        <item lang="ru" id="modulbankpayment_sno_usn_income">упрощенная СН (доходы)</item>
+        <item lang="ru" id="modulbankpayment_sno_usn_income_outcome">упрощенная СН (доходы минус расходы)</item>
+        <item lang="ru" id="modulbankpayment_sno_envd">единый налог на вмененный доход</item>
+        <item lang="ru" id="modulbankpayment_sno_esn">единый сельскохозяйственный налог</item>
+        <item lang="ru" id="modulbankpayment_sno_patent">патентная СН</item>
+
+
+        <item lang="ru" id="modulbankpayment_product_vat">Ставка НДС на товары</item>
+        <item lang="ru" id="modulbankpayment_vat_catalog">Брать из товара</item>
+        <item lang="ru" id="modulbankpayment_vat_selivery_settings">Брать из доставки</item>
+        <item lang="ru" id="modulbankpayment_vat_none">Без НДС</item>
+        <item lang="ru" id="modulbankpayment_vat_vat0">НДС по ставке 0%</item>
+        <item lang="ru" id="modulbankpayment_vat_vat10">НДС чека по ставке 10%</item>
+        <item lang="ru" id="modulbankpayment_vat_vat110">НДС чека по расчетной ставке 10/110</item>
+        <item lang="ru" id="modulbankpayment_vat_vat20">НДС чека по ставке 20%</item>
+        <item lang="ru" id="modulbankpayment_vat_vat120">НДС чека по расчетной ставке 20/120</item>
+        <item lang="ru" id="modulbankpayment_delivery_vat">Ставка НДС на доставку</item>
+
+        <item lang="ru" id="modulbankpayment_payment_method">Признак способа расчета</item>
+        <item lang="ru" id="modulbankpayment_payment_method_full_prepayment">полная предоплата</item>
+        <item lang="ru" id="modulbankpayment_payment_method_partial_prepayment">частичная предоплата</item>
+        <item lang="ru" id="modulbankpayment_payment_method_advance">аванс</item>
+        <item lang="ru" id="modulbankpayment_payment_method_full_payment">полный расчет</item>
+        <item lang="ru" id="modulbankpayment_payment_method_partial_payment">частичный расчет и кредит</item>
+        <item lang="ru" id="modulbankpayment_payment_method_credit">кредит</item>
+        <item lang="ru" id="modulbankpayment_payment_method_credit_payment">выплата по кредиту</item>
+
+
+        <item lang="ru" id="modulbankpayment_payment_object">Признак предмета расчета</item>
+        <item lang="ru" id="modulbankpayment_payment_object_commodity">товар</item>
+        <item lang="ru" id="modulbankpayment_payment_object_excise">подакцизный товар</item>
+        <item lang="ru" id="modulbankpayment_payment_object_job">работа</item>
+        <item lang="ru" id="modulbankpayment_payment_object_service">услуга</item>
+        <item lang="ru" id="modulbankpayment_payment_object_gambling_bet">ставка в азартной игре</item>
+        <item lang="ru" id="modulbankpayment_payment_object_gambling_prize">выигрыш в азартной игре</item>
+        <item lang="ru" id="modulbankpayment_payment_object_lottery">лотерейный билет</item>
+        <item lang="ru" id="modulbankpayment_payment_object_lottery_prize">выигрыш в лотерею</item>
+        <item lang="ru" id="modulbankpayment_payment_object_intellectual_activity">результаты интеллектуальной деятельности</item>
+        <item lang="ru" id="modulbankpayment_payment_object_payment">платеж</item>
+        <item lang="ru" id="modulbankpayment_payment_object_agent_commission">агентское вознаграждение</item>
+        <item lang="ru" id="modulbankpayment_payment_object_composite">несколько вариантов</item>
+        <item lang="ru" id="modulbankpayment_payment_object_another">другое</item>
+        <item lang="ru" id="modulbankpayment_payment_object_delivery">Признак предмета расчета на доставку</item>
+        <item lang="ru" id="modulbankpayment_logging">Логирование</item>
+        <item lang="ru" id="modulbankpayment_log_size_limit">Ограничение размеров лога (Mb)</item>
+        <item lang="ru" id="modulbankpayment_status_success">Статус заказа при оплате</item>
+        <item lang="ru" id="modulbankpayment_download_logs">Скачать логи</item>
+    </language_variables>
+</addon>
