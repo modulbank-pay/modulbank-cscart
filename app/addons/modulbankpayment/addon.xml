@@ -19,7 +19,7 @@
         <item lang="ru" id="modulbankpayment_transaction_status_3ds">Ожидает 3DS</item>
         <item lang="ru" id="modulbankpayment_transaction_status_failed">При оплате возникла ошибка</item>
         <item lang="ru" id="modulbankpayment_transaction_status_complete">Оплата прошла успешно</item>
-        <item lang="ru" id="modulbankpayment_transaction_status">Статсут оплаты</item>
+        <item lang="ru" id="modulbankpayment_transaction_status">Статус оплаты</item>
         <item lang="ru" id="modulbankpayment_merchant">Мерчант</item>
         <item lang="ru" id="modulbankpayment_secret_key">Секретный ключ</item>
         <item lang="ru" id="modulbankpayment_test_secret_key">Тестовый секретный ключ</item>
