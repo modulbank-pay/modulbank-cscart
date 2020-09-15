@@ -2,7 +2,7 @@
 
 Модуль позволяет принимать платежи банковской картой через Модульбанк.
 
-[Скачать модуль](https://github.com/modulbank-pay/modulbank-cscart/releases/download/v1.0.1/modulbank_cscart_1.0.1.zip)
+[Скачать модуль](https://github.com/modulbank-pay/modulbank-cscart/releases/download/v1.1.0/modulbank_cscart_1.1.0.zip)
 
 ### Установка
 
