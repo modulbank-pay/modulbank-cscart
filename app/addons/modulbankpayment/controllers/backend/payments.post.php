@@ -32,6 +32,7 @@ if ($mode == 'update' || $mode == 'manage') {
 if ($mode == 'processor') {
     $defaults = array(
         'mode' => 'test',
+        'preauth' => 0,
         'success_url' => fn_url("payment_notification.success?payment=modulbankpayment", 'C', 'current'),
         'fail_url' => fn_url("payment_notification.fail?payment=modulbankpayment", 'C', 'current'),
         'cancel_url' => fn_url("payment_notification.cancel?payment=modulbankpayment", 'C', 'current'),

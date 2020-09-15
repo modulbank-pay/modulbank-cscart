@@ -9,8 +9,8 @@ if (defined('PAYMENT_NOTIFICATION')) {
     if(!empty($_REQUEST['order_id'])) {
         $order_id = intval($_REQUEST['order_id']);
     }
+    $order_info = fn_get_order_info($order_id);
     if (empty($processor_data)) {
-        $order_info = fn_get_order_info($order_id);
         $processor_data = fn_get_processor_data($order_info['payment_id']);
     }
 
@@ -23,13 +23,14 @@ if (defined('PAYMENT_NOTIFICATION')) {
         $signature = ModulbankHelper::calcSignature($key, $_POST);
 
         if(strcmp($signature, $_POST['signature']) === 0){
-            if($_POST['state'] === 'COMPLETE' ) {
+            if(($_POST['state'] === 'COMPLETE' && $order_info['status'] != $processor_data['processor_params']['status_capture']) || $_POST['state'] === 'AUTHORIZED' ) {
                 $pp_response = array();
 
                 $pp_response['order_status'] = $processor_data['processor_params']['status_success'];
                 $pp_response['reason_text'] = __('transaction_approved');
                 $pp_response['transaction_id'] = $_POST['transaction_id'];
                 fn_finish_payment($order_id, $pp_response);
+                fn_update_order_payment_info($order_id, $pp_response);
                 fn_change_order_status($order_id, $pp_response['order_status'], '',false);
 
             }
@@ -66,6 +67,8 @@ if (defined('PAYMENT_NOTIFICATION')) {
                 case 'FAILED':$payment_status_text = __('modulbankpayment_transaction_status_failed');
                     break;
                 case 'COMPLETE':$payment_status_text = __('modulbankpayment_transaction_status_complete');
+                    break;
+                case 'AUTHORIZED':$payment_status_text = __('modulbankpayment_transaction_status_complete');
                     break;
                 default:$payment_status_text = __('modulbankpayment_transaction_status_wait');
             }
@@ -116,6 +119,7 @@ if (defined('PAYMENT_NOTIFICATION')) {
         'amount'          => $total,
         'order_id'        => $order_id,
         'testing'         => $processor_data['processor_params']['mode'] == 'test' ? 1 : 0,
+        'preauth'         => $processor_data['processor_params']['preauth'],
         'description'     => 'Оплата заказа №' . $order_id,
         'success_url'     => $processor_data['processor_params']['success_url']."&order_id=$order_id",
         'fail_url'        => $processor_data['processor_params']['fail_url']."&order_id=$order_id",

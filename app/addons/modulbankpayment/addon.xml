@@ -2,7 +2,7 @@
 
 <addon scheme='2.0'>
     <id>modulbankpayment</id>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <name>Модульбанк:Интернет эквайринг</name>
     <description>Модульбанк эквайринг</description>
     <priority>100500</priority>
@@ -23,6 +23,9 @@
         <item lang="ru" id="modulbankpayment_merchant">Мерчант</item>
         <item lang="ru" id="modulbankpayment_secret_key">Секретный ключ</item>
         <item lang="ru" id="modulbankpayment_test_secret_key">Тестовый секретный ключ</item>
+        <item lang="ru" id="modulbankpayment_preauth">Предавторизаци</item>
+        <item lang="ru" id="modulbankpayment_preauth_yes">Да</item>
+        <item lang="ru" id="modulbankpayment_preauth_no">Нет</item>
         <item lang="ru" id="modulbankpayment_mode">Режим</item>
         <item lang="ru" id="modulbankpayment_mode_test">Тестовый</item>
         <item lang="ru" id="modulbankpayment_mode_prod">Рабочий</item>
@@ -79,6 +82,8 @@
         <item lang="ru" id="modulbankpayment_logging">Логирование</item>
         <item lang="ru" id="modulbankpayment_log_size_limit">Ограничение размеров лога (Mb)</item>
         <item lang="ru" id="modulbankpayment_status_success">Статус заказа при оплате</item>
+        <item lang="ru" id="modulbankpayment_status_capture">Статус заказа для подтверждения оплаты</item>
+        <item lang="ru" id="modulbankpayment_status_refund">Статус заказа для возврата оплаты</item>
         <item lang="ru" id="modulbankpayment_download_logs">Скачать логи</item>
     </language_variables>
 </addon>

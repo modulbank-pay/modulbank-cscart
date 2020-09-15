@@ -29,6 +29,15 @@
         </select>
     </div>
 </div>
+<div class="control-group">
+    <label class="control-label" for="modulbankpayment_preauth">{__("modulbankpayment_preauth")}:</label>
+    <div class="controls">
+        <select name="payment_data[processor_params][preauth]" id="modulbankpayment_preauth">
+            <option value="0" {if $processor_params.preauth == "0"}selected="selected"{/if}>{__("modulbankpayment_preauth_no")}</option>
+            <option value="1" {if $processor_params.preauth == "1"}selected="selected"{/if}>{__("modulbankpayment_preauth_yes")}</option>
+        </select>
+    </div>
+</div>
 
 <div class="control-group">
     <label class="control-label" for="modulbankpayment_success_url">{__("modulbankpayment_success_url")}:</label>
@@ -220,6 +229,28 @@
         <select name="payment_data[processor_params][status_success]" id="elm_modulbankpayment_status_success">
             {foreach from=$statuses item="s" key="k"}
                 <option value="{$k}" {if (isset($processor_params.status_success) && $processor_params.status_success == $k) || (!isset($processor_params.status_success) && $k == 'P')}selected="selected"{/if}>{$s}</option>
+            {/foreach}
+        </select>
+    </div>
+</div>
+
+<div class="control-group">
+    <label class="control-label" for="elm_modulbankpayment_status_capture">{__("modulbankpayment_status_capture")}:</label>
+    <div class="controls">
+        <select name="payment_data[processor_params][status_capture]" id="elm_modulbankpayment_status_capture">
+            {foreach from=$statuses item="s" key="k"}
+                <option value="{$k}" {if (isset($processor_params.status_capture) && $processor_params.status_capture == $k) || (!isset($processor_params.status_capture) && $k == 'C')}selected="selected"{/if}>{$s}</option>
+            {/foreach}
+        </select>
+    </div>
+</div>
+
+<div class="control-group">
+    <label class="control-label" for="elm_modulbankpayment_status_refund">{__("modulbankpayment_status_refund")}:</label>
+    <div class="controls">
+        <select name="payment_data[processor_params][status_refund]" id="elm_modulbankpayment_status_refund">
+            {foreach from=$statuses item="s" key="k"}
+                <option value="{$k}" {if (isset($processor_params.status_refund) && $processor_params.status_refund == $k) || (!isset($processor_params.status_refund) && $k == 'E')}selected="selected"{/if}>{$s}</option>
             {/foreach}
         </select>
     </div>
