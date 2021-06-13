@@ -256,6 +256,27 @@
     </div>
 </div>
 
+<div class="control-group">
+    <label class="control-label" for="modulbankpayment_show_custom_pm">{__("modulbankpayment_show_custom_pm")}:</label>
+    <div class="controls">
+    <input type="checkbox" name="payment_data[processor_params][show_custom_pm]" id="modulbankpayment_show_custom_pm" value="1" {if $processor_params.show_custom_pm == "1"}checked{/if}>
+    <p>{__("modulbankpayment_show_custom_pm_desc")}</p>
+    </div>
+</div>
+
+<div class="control-group" id="modulbankpayment_custom_pm_list_box" style="display:none">
+    <label class="control-label"></label>
+    <div class="controls">
+    <input type="checkbox" name="payment_data[processor_params][card]" value="1" {if $processor_params.card == "1"}checked{/if}>
+    &nbsp;{__("modulbankpayment_card_method")}<br>
+    <input type="checkbox" name="payment_data[processor_params][sbp]" value="1" {if $processor_params.sbp == "1"}checked{/if}>
+    &nbsp;{__("modulbankpayment_sbp_method")}<br>
+    <input type="checkbox" name="payment_data[processor_params][googlepay]" value="1" {if $processor_params.googlepay == "1"}checked{/if}>
+    &nbsp;{__("modulbankpayment_googlepay_method")}<br>
+    <input type="checkbox" name="payment_data[processor_params][applepay]" value="1" {if $processor_params.applepay == "1"}checked{/if}>
+    &nbsp;{__("modulbankpayment_applepay_method")}<br>
+    </div>
+</div>
 
 <div class="control-group">
     <label class="control-label" for="modulbankpayment_logging">{__("modulbankpayment_logging")}:</label>
@@ -276,3 +297,21 @@
     </div>
 
 </div>
+{literal}
+<script>
+  jQuery(document).ready(function(){
+    var checkbox = jQuery('#modulbankpayment_show_custom_pm');
+    var block = jQuery('#modulbankpayment_custom_pm_list_box');
+    if (checkbox.attr('checked')) {
+      block.show();
+    }
+    checkbox.change(function(){
+      if (this.checked) {
+        block.show();
+      } else {
+        block.hide();
+      }
+    });
+  });
+</script>
+{/literal}

@@ -2,7 +2,7 @@
 
 <addon scheme='2.0'>
     <id>modulbankpayment</id>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
     <name>Модульбанк:Интернет эквайринг</name>
     <description>Модульбанк эквайринг</description>
     <priority>100500</priority>
@@ -32,6 +32,12 @@
         <item lang="ru" id="modulbankpayment_success_url">Адрес для перехода после успешной оплаты</item>
         <item lang="ru" id="modulbankpayment_fail_url">Адрес для перехода после ошибки при оплате</item>
         <item lang="ru" id="modulbankpayment_cancel_url">Адрес для перехода в случае нажатия кнопки «Вернуться в магазин»</item>
+        <item lang="ru" id="modulbankpayment_show_custom_pm">Отображать определённые способы оплаты</item>
+        <item lang="ru" id="modulbankpayment_show_custom_pm_desc">Для отображения отдельных методов оплаты установите галочку и выберите интересующие из списка</item>
+        <item lang="ru" id="modulbankpayment_card_method">Картой</item>
+        <item lang="ru" id="modulbankpayment_sbp_method">Система быстрых платежей</item>
+        <item lang="ru" id="modulbankpayment_googlepay_method">GooglePay</item>
+        <item lang="ru" id="modulbankpayment_applepay_method">ApplePay</item>
 
 
         <item lang="ru" id="modulbankpayment_sno">Система налогооблажения</item>

@@ -134,6 +134,14 @@ if (defined('PAYMENT_NOTIFICATION')) {
         'salt'            => ModulbankHelper::getSalt(),
     );
 
+    if ($processor_data['processor_params']['show_custom_pm']) {
+        $methods = ['card', 'sbp', 'applepay', 'googlepay'];
+        $methods = array_filter($methods, function ($method) use ($processor_data) {
+            return $processor_data['processor_params'][$method];
+        });
+        $post_data['show_payment_methods'] = json_encode(array_values($methods));
+    }
+
     $key = $processor_data['processor_params']['mode'] == 'test'?
             $processor_data['processor_params']['test_secret_key']:
             $processor_data['processor_params']['secret_key'];
