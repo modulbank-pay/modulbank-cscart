@@ -2,7 +2,7 @@
 
 <addon scheme='2.0'>
     <id>modulbankpayment</id>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <name>Модульбанк:Интернет эквайринг</name>
     <description>Модульбанк эквайринг</description>
     <priority>100500</priority>

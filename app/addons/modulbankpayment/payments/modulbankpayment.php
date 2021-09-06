@@ -134,7 +134,7 @@ if (defined('PAYMENT_NOTIFICATION')) {
         'salt'            => ModulbankHelper::getSalt(),
     );
 
-    if ($processor_data['processor_params']['show_custom_pm']) {
+    if (!empty($processor_data['processor_params']['show_custom_pm'])) {
         $methods = ['card', 'sbp', 'applepay', 'googlepay'];
         $methods = array_filter($methods, function ($method) use ($processor_data) {
             return $processor_data['processor_params'][$method];
